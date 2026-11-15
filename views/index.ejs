@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>카페 메뉴판</title>
+
+    <style>
+        body {
+            background-color: #f5f5f5;
+            font-family: sans-serif;
+            text-align: center;
+        }
+
+        .container {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .card {
+            background: white;
+            width: 200px;
+            padding: 20px;
+            border-radius: 15px;
+            box-shadow: 0 3px 10px #ddd;
+        }
+
+        .category {
+            color: gray;
+        }
+
+        .price {
+            color: #c07842;
+            font-size: 20px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>☕ 우리 카페 메뉴</h1>
+
+    <div class="container">
+
+        <% menus.forEach(function(menu) { %>
+
+            <div class="card">
+
+                <h2><%= menu.name %></h2>
+
+                <p class="category">
+                    <%= menu.category %>
+                </p>
+
+                <p class="price">
+                    <%= Number(menu.price).toLocaleString('ko-KR') %>원
+                </p>
+
+            </div>
+
+        <% }); %>
+
+    </div>
+
+</body>
+</html>
